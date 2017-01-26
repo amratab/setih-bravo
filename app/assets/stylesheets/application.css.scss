@@ -207,9 +207,17 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
     text-decoration: none;
     background-color: rgb(34, 194, 187);
 }
+
 .alert {
-  border-radius: 0px;
+    padding: 20px;
+    padding-bottom: 15px;
+    border: 0px solid transparent;
+    list-style: none;
+    text-align: center;
+    border-radius: 0px;
+    margin-bottom: 0rem;
 }
+
 .alert-success {
     background-color: #23b3ad;
     border-color: #22b1ab;
@@ -225,8 +233,16 @@ a:not([href]):not([tabindex]):focus, a:not([href]):not([tabindex]):hover {
     border-color: #ffe34f;
     color: #777777;
 }
-.alert-info {
-    background-color: #003b55;
-    border-color: #003b55;
-    color: #ffffff;
+.alert-alert {
+    background-color: #ffe34f;
+    border-color: #ffe34f;
+    color: #777777;
+}
+.alert-notice {
+  background-color: #23b3ad;
+  border-color: #22b1ab;
+  color: #ffffff;
+}
+ol, ul, dl {
+    list-style: none;
 }

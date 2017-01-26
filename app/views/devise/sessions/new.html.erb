@@ -1,33 +1,31 @@
-
+<%= devise_error_messages! %>
 
 <div class="col-md-4 offset-md-4">
     <div class="card ninja-card">
         <div class="card-block">
             <h3 class="card-title text-center">Log in</h3>
+            <hr>
 
-                <hr>
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 
-                <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="field form-group">
+                <%= f.label :email %><br/>
+                <%= f.email_field :email, autofocus: true, :class => "form-control" %>
+            </div>
 
-                <div class="field form-group">
-                    <%= f.label :email %><br/>
-                    <%= f.email_field :email, autofocus: true, :class => "form-control" %>
-                </div>
+            <div class="field form-group">
+                <%= f.label :password %><br/>
+                <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
+            </div>
 
-                <div class="field form-group">
-                    <%= f.label :password %><br/>
-                    <%= f.password_field :password, autocomplete: "off", :class => "form-control" %>
-                </div>
+            <div class="actions">
+                <%= f.submit "Log in", :class => "btn btn-primary btn-lg btn-block" %>
+            </div>
+            <% end %>
 
-                <div class="actions">
-                    <%= f.submit "Log in", :class => "btn btn-primary btn-lg btn-block" %>
-                </div>
-                <% end %>
-
-                <div class="text-center" style="padding-top: 10px">
-                    <%= render "devise/shared/links" %>
-                </div>
-
+            <div class="text-center" style="padding-top: 10px">
+                <%= render "devise/shared/links" %>
+            </div>
 
         </div>
     </div>

@@ -1,23 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Setih - Extend your team with world-class developers</title>
-    <%= csrf_meta_tags %>
+    <head>
+        <title>Setih - Extend your team with world-class developers</title>
+        <%= csrf_meta_tags %>
+        <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+        <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    </head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  </head>
+    <%= render partial: "shared/navbar" %>
+    <%= render partial: "shared/messages" %>
 
-
-  <%= render partial: "shared/messages" %>
-  <%= render partial: "shared/navbar" %>
-
-  <div class="container-fluid">
-    <body>
-      <%= yield %>
-    </body>
-  </div>
-
+    <div class="container-fluid">
+        <body>
+            <%= yield %>
+        </body>
+    </div>
 
 </html>
