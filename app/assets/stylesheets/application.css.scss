@@ -62,8 +62,8 @@ a:hover {
 .jumbotron {
     padding: 12rem 2rem;
 }
-.list-group-item {
-    //padding: 60px;
+.about-list-group-item {
+    padding: 60px;
 }
 .companier {
     padding-top: 60px;
@@ -141,7 +141,7 @@ a:hover {
     text-decoration: none;
     background-color: rgba(0, 59, 85, 0.02);
 }
-.list-group-item {
+.about-list-group-item {
     border: 1px solid rgba(0, 0, 0, 0);
 }
 a:not([href]):not([tabindex]) {
