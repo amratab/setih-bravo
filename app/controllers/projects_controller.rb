@@ -5,13 +5,21 @@ class ProjectsController < ApplicationController
   # GET /projects
   # GET /projects.json
   def index
-    @projects = Project.all
+    @projects = Project.find(current_user.subscriptions.pluck(:project_id).uniq)
+    redirect_to new_user_session_path unless current_user
   end
 
   # GET /projects/1
-  # GET /projects/1.json
   def show
-  end
+     begin
+       @project = current_user.projects
+         .joins(:subscriptions)
+         .where(subscriptions: {user_id: current_user.id})
+         .find(params[:id])
+     rescue ActiveRecord::RecordNotFound => e
+       redirect_to root_path, notice: 'No access to this project.'
+     end
+   end
 
   # GET /projects/new
   def new
@@ -20,6 +28,14 @@ class ProjectsController < ApplicationController
 
   # GET /projects/1/edit
   def edit
+    begin
+      @project = current_user.projects
+        .joins(:subscriptions)
+        .where(subscriptions: {user_id: current_user.id})
+        .find(params[:id])
+    rescue ActiveRecord::RecordNotFound => e
+      redirect_to root_path, notice: 'No access to this project.'
+    end
   end
 
   # POST /projects
@@ -43,8 +59,6 @@ class ProjectsController < ApplicationController
   # PATCH/PUT /projects/1
   # PATCH/PUT /projects/1.json
   def update
-
-    @project.subscriptions.new(user: current_user)
 
     respond_to do |format|
       if @project.update(project_params)
@@ -77,4 +91,5 @@ class ProjectsController < ApplicationController
     def project_params
       params.require(:project).permit(:user_id, :title, :body)
     end
+
 end

@@ -13,7 +13,7 @@
   </thead>
 
   <tbody>
-    <% @projects.each do |project| %>
+    <% current_user.projects.each do |project| %>
       <tr>
         <td><%= project.user_id %></td>
         <td><%= project.title %></td>

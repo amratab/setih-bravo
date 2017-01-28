@@ -16,6 +16,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'pundit', '~> 1.1'
 gem 'devise', '~> 4.2'
 gem 'bootstrap', '~> 4.0.0.alpha6'
+gem 'administrate', "~> 0.3.0"
+gem 'bourbon'
 
 group :development, :test do
   gem 'byebug', platform: :mri

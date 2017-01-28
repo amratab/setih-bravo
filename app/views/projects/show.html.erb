@@ -1,8 +1,11 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>User:</strong>
-  <%= @project.user_id %>
+  <strong>Users:</strong>
+  <% @project.users.uniq.each do |user| %><br>
+                  <%= user.id %>
+                  <%= user.email %><br>
+                <% end %>
 </p>
 
 <p>
