@@ -309,7 +309,7 @@ ol, ul, dl {
 
 @media (max-width:48em) {
   /* overlay sub levels on small screens */
-  #sidebar .list-group .collapse.in, #sidebar .list-group .collapsing {
+  #sidebar .list-group .collapse.show, #sidebar .list-group .collapsing {
     position: absolute;
     z-index: 1;
     width: 190px;
